@@ -18,3 +18,4 @@
 /Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/bin/Release/net10.0/Renci.SshNet.dll
 /Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/obj/Release/net10.0/TestSFTP.csproj.AssemblyReference.cache
 /Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/obj/Release/net10.0/TestSFTP.csproj.Up2Date
+/Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/obj/Release/net10.0/TestSFTP.sourcelink.json
