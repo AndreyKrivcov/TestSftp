@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>TestSFTP</id>
+    <version>1.0.0</version>
+    <authors>TestSFTP</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="1386fc63ac0c3a1204ba1a3d928409a95da1d277" />
+    <dependencies>
+      <group targetFramework="net10.0">
+        <dependency id="SSH.NET" version="2026.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/bin/Release/net10.0/TestSFTP.runtimeconfig.json" target="lib/net10.0/TestSFTP.runtimeconfig.json" />
+    <file src="/Data/RiderProjects/WP/Gitlab/TestSFTP/TestSFTP/bin/Release/net10.0/TestSFTP.dll" target="lib/net10.0/TestSFTP.dll" />
+  </files>
+</package>

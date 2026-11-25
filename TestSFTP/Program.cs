@@ -21,6 +21,72 @@ try
     {
         Console.WriteLine($"{item.Name} : {item.FullName}");
     }
+
+    Console.WriteLine("===================================================================================");
+    Console.WriteLine("Click enter to continue");
+    Console.ReadLine();
+    Console.WriteLine("===================================================================================");
+    
+    try
+    {
+        Console.WriteLine("Create directory \"./MyTestDirectory\"");
+        
+        client.CreateDirectory("./MyTestDirectory");
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+
+    var isExists = client.Exists("./MyTestDirectory");
+    Console.WriteLine($"Directory {(isExists ? "Created" : "Not exists") }");
+    
+    Console.WriteLine("Click enter to Remove directory:");
+    Console.ReadLine();
+
+    try
+    {
+        client.DeleteDirectory("./MyTestDirectory");
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+    
+    Console.WriteLine("Create file: \"./MyTestFile.txt\"");
+
+    try
+    {
+        using MemoryStream ms = new MemoryStream();
+        await using var writer = new StreamWriter(ms);
+        
+        writer.WriteLine("Hello World!");
+        
+        await client.UploadFileAsync(ms, "./MyTestFile.txt", CancellationToken.None);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+    
+    Console.WriteLine($"File: {(client.Exists("./MyTestFile.txt") ? "Created" : "Not created")}");
+    
+    Console.WriteLine("===================================================================================");
+    Console.WriteLine("Click enter to Remove file:");
+    Console.WriteLine("===================================================================================");
+    Console.ReadLine();
+
+    try
+    {
+        await  client.DeleteFileAsync("./MyTestFile.txt", CancellationToken.None);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+    
+    Console.WriteLine("===================================================================================");
+    Console.WriteLine($"File: {(!client.Exists("./MyTestFile.txt") ? "Removed" : "Exists")}");
 }
 finally
 {
