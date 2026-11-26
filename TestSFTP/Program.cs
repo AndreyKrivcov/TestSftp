@@ -31,14 +31,14 @@ try
     {
         Console.WriteLine("Create directory \"./MyTestDirectory\"");
         
-        client.CreateDirectory("./MyTestDirectory");
+        client.CreateDirectory(Path.Combine(args[3],"MyTestDirectory").Replace("\\", "/"));
     }
     catch (Exception e)
     {
         Console.WriteLine(e);
     }
 
-    var isExists = client.Exists("./MyTestDirectory");
+    var isExists = client.Exists(Path.Combine(args[3],"MyTestDirectory").Replace("\\", "/"));
     Console.WriteLine($"Directory {(isExists ? "Created" : "Not exists") }");
     
     Console.WriteLine("Click enter to Remove directory:");
@@ -46,7 +46,7 @@ try
 
     try
     {
-        client.DeleteDirectory("./MyTestDirectory");
+        client.DeleteDirectory(Path.Combine(args[3],"MyTestDirectory").Replace("\\", "/"));
     }
     catch (Exception e)
     {
@@ -62,7 +62,7 @@ try
         
         writer.WriteLine("Hello World!");
         
-        await client.UploadFileAsync(ms, "./MyTestFile.txt", CancellationToken.None);
+        await client.UploadFileAsync(ms, Path.Combine(args[3],"./MyTestFile.txt").Replace("\\", "/"), CancellationToken.None);
     }
     catch (Exception e)
     {
@@ -78,7 +78,7 @@ try
 
     try
     {
-        await  client.DeleteFileAsync("./MyTestFile.txt", CancellationToken.None);
+        await  client.DeleteFileAsync(Path.Combine(args[3],"./MyTestFile.txt").Replace("\\", "/"), CancellationToken.None);
     }
     catch (Exception e)
     {
@@ -86,7 +86,7 @@ try
     }
     
     Console.WriteLine("===================================================================================");
-    Console.WriteLine($"File: {(!client.Exists("./MyTestFile.txt") ? "Removed" : "Exists")}");
+    Console.WriteLine($"File: {(!client.Exists(Path.Combine(args[3],"./MyTestFile.txt").Replace("\\", "/")) ? "Removed" : "Exists")}");
 }
 finally
 {
