@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestSFTP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40c6ce4f17f9206d6d11dcf0732e007419ab13f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9bfa5bc315a39748df0c0de3cf0a92acef1cadd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestSFTP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestSFTP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
